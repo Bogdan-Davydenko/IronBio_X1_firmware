@@ -1566,6 +1566,13 @@
   #if ENABLED(USE_WMIN_PLUG)
     #define ENDSTOPPULLUP_WMIN
   #endif
+  //my_addition
+  #if ENABLED(USE_EMIN_PLUG)
+    #define ENDSTOPPULLUP_EMIN
+  #endif
+  #if ENABLED(USE_EMAX_PLUG)
+    #define ENDSTOPPULLUP_EMAX
+  #endif
 #endif
 
 /**
@@ -1589,6 +1596,13 @@
   #endif
   #if ENABLED(USE_ZMIN_PLUG)
     #define ENDSTOPPULLDOWN_ZMIN
+  #endif
+  //my_addition
+  #if ENABLED(USE_EMIN_PLUG)
+    #define ENDSTOPPULLDOWN_EMIN
+  #endif
+  #if ENABLED(USE_EMIN_PLUG)
+    #define ENDSTOPPULLDOWN_EMIN
   #endif
 #endif
 
