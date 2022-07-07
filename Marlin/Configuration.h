@@ -900,6 +900,11 @@
 //#define USE_VMAX_PLUG
 //#define USE_WMAX_PLUG
 
+
+//my_addition
+#define USE_EMIN_PLUG
+#define USE_EMAX_PLUG
+
 // Enable pullup for all endstops to prevent a floating state
 #define ENDSTOPPULLUPS
 #if DISABLED(ENDSTOPPULLUPS)
@@ -923,6 +928,11 @@
   //#define ENDSTOPPULLUP_VMAX
   //#define ENDSTOPPULLUP_WMAX
   //#define ENDSTOPPULLUP_ZMIN_PROBE
+
+  //my_addition
+  //define ENDSTOPPULLUP_EMIN
+  //define ENDSTOPPULLUP_EMAX
+
 #endif
 
 // Enable pulldown for all endstops to prevent a floating state
@@ -948,6 +958,11 @@
   //#define ENDSTOPPULLDOWN_VMAX
   //#define ENDSTOPPULLDOWN_WMAX
   //#define ENDSTOPPULLDOWN_ZMIN_PROBE
+
+  //my_addition
+  //#define ENDSTOPPULLDOWN_EMIN
+  //#define ENDSTOPPULLDOWN_EMAX
+
 #endif
 
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
@@ -970,6 +985,10 @@
 #define V_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define W_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
+
+//my_addition
+#define E_MIN_ENDSTOP_INVERTING false
+#define E_MAX_ENDSTOP_INVERTING false
 
 // Enable this feature if all enabled endstop pins are interrupt-capable.
 // This will remove the need to poll the interrupt pins, saving many CPU cycles.
