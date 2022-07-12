@@ -2287,7 +2287,8 @@ uint32_t Stepper::block_phase_isr() {
         if (current_block->steps.v) SBI(axis_bits, V_AXIS),
         if (current_block->steps.w) SBI(axis_bits, W_AXIS)
       );
-      //if (current_block->steps.e) SBI(axis_bits, E_AXIS);
+      //my_addition
+      if (current_block->steps.e) SBI(axis_bits, E_AXIS);
       //if (current_block->steps.a) SBI(axis_bits, X_HEAD);
       //if (current_block->steps.b) SBI(axis_bits, Y_HEAD);
       //if (current_block->steps.c) SBI(axis_bits, Z_HEAD);
@@ -2975,7 +2976,6 @@ void Stepper::endstop_triggered(const AxisEnum axis) {
       count_position[axis]
     #endif
   );
-
   // Discard the rest of the move if there is a current block
   quick_stop();
 

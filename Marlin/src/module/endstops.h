@@ -52,8 +52,8 @@ enum EndstopEnum : char {
   _ES_ITEM(HAS_W_MIN, W_MIN)
   _ES_ITEM(HAS_W_MAX, W_MAX)
   //my_addition
-  _ES_ITEM(HAS_E_MIN, E_MIN)
-  _ES_ITEM(HAS_E_MAX, E_MAX)
+  _ES_ITEM(HAS_E0_MIN, E0_MIN)
+  _ES_ITEM(HAS_E0_MAX, E0_MAX)
 
   // Extra Endstops for XYZ
   #if ENABLED(X_DUAL_ENDSTOPS)
@@ -105,8 +105,8 @@ enum EndstopEnum : char {
     , K_ENDSTOP = TERN(K_HOME_TO_MAX, K_MAX, K_MIN)
   #endif
   //my_addition
-  #if HAS_E_MIN || HAS_E_MAX
-    , E_ENDSTOP = TERN(E_HOME_TO_MAX, E_MAX, E_MIN)
+  #if HAS_E0_MIN || HAS_E0_MAX
+    , E0_ENDSTOP = TERN(E0_HOME_TO_MAX, E0_MAX, E0_MIN)
   #endif
 };
 
