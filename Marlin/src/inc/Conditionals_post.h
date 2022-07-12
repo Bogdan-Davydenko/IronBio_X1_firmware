@@ -1567,10 +1567,10 @@
     #define ENDSTOPPULLUP_WMIN
   #endif
   //my_addition
-  #if ENABLED(USE_EMIN_PLUG)
+  #if ENABLED(USE_E0MIN_PLUG)
     #define ENDSTOPPULLUP_EMIN
   #endif
-  #if ENABLED(USE_EMAX_PLUG)
+  #if ENABLED(USE_E0MAX_PLUG)
     #define ENDSTOPPULLUP_EMAX
   #endif
 #endif
@@ -1598,10 +1598,10 @@
     #define ENDSTOPPULLDOWN_ZMIN
   #endif
   //my_addition
-  #if ENABLED(USE_EMIN_PLUG)
+  #if ENABLED(USE_E0MIN_PLUG)
     #define ENDSTOPPULLDOWN_EMIN
   #endif
-  #if ENABLED(USE_EMIN_PLUG)
+  #if ENABLED(USE_E0MIN_PLUG)
     #define ENDSTOPPULLDOWN_EMIN
   #endif
 #endif
@@ -2622,6 +2622,15 @@
 #if _HAS_STOP(W,MAX)
   #define HAS_W_MAX 1
 #endif
+
+//my_addition
+#if _HAS_STOP(E0,MIN)
+  #define HAS_E0_MIN 1
+#endif
+#if _HAS_STOP(E0,MAX)
+  #define HAS_E0_MAX 1
+#endif
+
 #if PIN_EXISTS(X2_MIN)
   #define HAS_X2_MIN 1
 #endif
