@@ -326,6 +326,11 @@
 #define STR_X2_MIN                          "x2_min"
 #define STR_X2_MAX                          "x2_max"
 
+
+//my_addition
+#define STR_E0_MIN                           "e0_min"
+#define STR_E0_MAX                           "e0_max"
+
 #if HAS_Y_AXIS
   #define STR_Y_MIN                         "y_min"
   #define STR_Y_MAX                         "y_max"
