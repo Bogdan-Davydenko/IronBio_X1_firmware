@@ -96,7 +96,7 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  #define MOTHERBOARD BOARD_RAMPS_14_EFB
+  #define MOTHERBOARD BOARD_MKS_GEN_L_V21
 #endif
 
 /**
@@ -120,7 +120,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 250000
+#define BAUDRATE 115200
 //#define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
 
 /**
@@ -179,7 +179,7 @@
 //#define U_DRIVER_TYPE  A4988
 //#define V_DRIVER_TYPE  A4988
 //#define W_DRIVER_TYPE  A4988
-#define E0_DRIVER_TYPE A4988
+#define E0_DRIVER_TYPE LV8729
 //#define E1_DRIVER_TYPE A4988
 //#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
@@ -806,15 +806,15 @@
  *
  * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
  */
-#define PREVENT_COLD_EXTRUSION
-#define EXTRUDE_MINTEMP 170
+//#define PREVENT_COLD_EXTRUSION
+//#define EXTRUDE_MINTEMP -1
 
 /**
  * Prevent a single extrusion longer than EXTRUDE_MAXLENGTH.
  * Note: For Bowden Extruders make this large enough to allow load/unload.
  */
-#define PREVENT_LENGTHY_EXTRUDE
-#define EXTRUDE_MAXLENGTH 200
+//#define PREVENT_LENGTHY_EXTRUDE
+//#define EXTRUDE_MAXLENGTH 200
 
 //===========================================================================
 //======================== Thermal Runaway Protection =======================
@@ -892,7 +892,7 @@
 //#define USE_WMIN_PLUG
 //#define USE_XMAX_PLUG
 //#define USE_YMAX_PLUG
-//#define USE_ZMAX_PLUG
+#define USE_ZMAX_PLUG
 //#define USE_IMAX_PLUG
 //#define USE_JMAX_PLUG
 //#define USE_KMAX_PLUG
@@ -902,8 +902,8 @@
 
 
 //my_addition
-#define USE_EMIN_PLUG
-#define USE_EMAX_PLUG
+#define USE_E0MIN_PLUG
+#define USE_E0MAX_PLUG
 
 // Enable pullup for all endstops to prevent a floating state
 #define ENDSTOPPULLUPS
@@ -930,8 +930,8 @@
   //#define ENDSTOPPULLUP_ZMIN_PROBE
 
   //my_addition
-  //define ENDSTOPPULLUP_EMIN
-  //define ENDSTOPPULLUP_EMAX
+  //define ENDSTOPPULLUP_E0MIN
+  //define ENDSTOPPULLUP_E0MAX
 
 #endif
 
@@ -960,8 +960,8 @@
   //#define ENDSTOPPULLDOWN_ZMIN_PROBE
 
   //my_addition
-  //#define ENDSTOPPULLDOWN_EMIN
-  //#define ENDSTOPPULLDOWN_EMAX
+  //#define ENDSTOPPULLDOWN_E0MIN
+  //#define ENDSTOPPULLDOWN_E0MAX
 
 #endif
 
@@ -987,8 +987,8 @@
 #define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
 
 //my_addition
-#define E_MIN_ENDSTOP_INVERTING false
-#define E_MAX_ENDSTOP_INVERTING false
+#define E0_MIN_ENDSTOP_INVERTING false
+#define E0_MAX_ENDSTOP_INVERTING false
 
 // Enable this feature if all enabled endstop pins are interrupt-capable.
 // This will remove the need to poll the interrupt pins, saving many CPU cycles.
@@ -1036,7 +1036,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 500 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 128 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
